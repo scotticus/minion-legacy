@@ -1,0 +1,134 @@
+// `Modal window.
+//----------------------------------------------------------------------------------------------------
+
+// Used for in-page content.
+div[data-modal-content] {
+  display: none;
+}
+
+.modal-overlay {
+  background: rgba(#000, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+
+  // Hide initially.
+  display: none;
+}
+
+.modal {
+  @extend %clearfix;
+  @include absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: $base-color;
+  max-width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  // Allow modal to be full screen, on mobile.
+  @media screen and (max-width: $media-mobile-max) {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  // For tablet and deskotp.
+  @include mq($media-tablet-min) {
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    width: 730px;
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+.modal-content {
+  border-top: $standard-height solid $base-shade;
+  padding: $gutter $gutter 0;
+
+  .standalone & {
+    border-top-width: $standard-height + 20px;
+  }
+
+  @include mq($media-tablet-min) {
+    border-top-width: 0;
+  }
+}
+
+.modal-close-x {
+  @include absolute;
+  color: darken($base-shade, 40%);
+  cursor: pointer;
+  font-size: .8 * $standard-height;
+
+  line-height: $standard-height;
+  text-align: center;
+  width: $standard-height;
+  height: $standard-height;
+  top: 0;
+  right: $standard-height/4;
+
+  .standalone & {
+    margin-top: 20px;
+  }
+
+  @include mq($media-tablet-min) {
+    background: #fff;
+    color: $font-color-body;
+    font-size: 20px;
+    top: 0;
+    right: 0;
+  }
+}
+
+// `Scrollable content.
+//----------------------------------------------------------------------------------------------------
+
+// Scrollable <div>.
+.modal-content-scroll {
+  background: #f6f6f6;
+  margin-bottom: 20px;
+  padding: $gutter $gutter 0;
+
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// `HTML overflow.
+//----------------------------------------------------------------------------------------------------
+
+// Mobile.
+.html-modal-show {
+  overflow-y: hidden;
+
+  .modal-overlay {
+    display: block;
+  }
+
+  .site-container {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+// Table & Desktop.
+@include mq($media-tablet-min) {
+  .html-modal-show {
+    overflow-y: scroll;
+
+    .entire-site-container {
+      height: auto;
+      overflow: visible;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+"id","name","armor_class","challenge","unique"
+1,"Acolyte",10,0.25,0
+2,"Adult Blue Dragon",19,16,0
+3,"Adult White Dragon",18,13,0
+4,"Air Elemental",15,5,0
+5,"Assassin",15,8,0
+6,"Bandit",12,0.125,0
+7,"Berserker",13,2,0
+8,"Bugbear",16,1,0
+9,"Bullywug",15,0.25,0
+10,"Commoner",10,0,0
+11,"Cultist",12,0.125,0
+12,"Deer",13,0,0
+13,"Doppelganger",14,3,0
+14,"Elk",10,0.25,0
+15,"Ettercap",13,2,0
+16,"Evil Mage",12,1,0
+17,"Flameskull",13,4,0
+18,"Gargoyle",15,2,0
+19,"Ghoul",12,1,0
+20,"Giant Centipede",13,0.25,0
+21,"Giant Frog",11,0.25,0
+22,"Giant Lizard",12,0.25,0
+23,"Giant Spider",14,1,0
+24,"Goblin",15,0.25,0
+25,"Gray Ooze",8,0.25,0
+27,"Grick",14,2,0
+26,"Griffon",12,2,0
+28,"Guard",16,0.125,0
+29,"Helmed Horror",20,4,0
+30,"Hobgoblin",18,0.5,0
+31,"Hobgoblin Captain",17,3,0
+32,"Knight",18,3,0
+33,"Kobold",12,0.125,0
+34,"Lizardfolk",15,0.5,0
+35,"Mage",12,6,0
+36,"Mormesk the Wraith",13,3,1
+37,"Nezznar the Black Spider",11,2,1
+38,"Noble",15,0.125,0
+39,"Nothic",15,2,0
+40,"Ochre Jelly",8,2,0
+41,"Ogre",11,2,0
+42,"Orc",13,0.5,0
+43,"Otyugh",14,5,0
+44,"Owlbear",13,3,0
+45,"Peryton",13,2,0
+46,"Priest",13,2,0
+47,"Redbrand Ruffian",14,0.5,0
+48,"Roper",20,5,0
+49,"Rug of Smothering",12,2,0
+50,"Scout",13,0.5,0
+51,"Shambling Mound",15,5,0
+52,"Sildar Hallwinter",16,1,1
+53,"Skeleton",13,0.25,0
+54,"Spectator",14,3,0
+55,"Specter",12,1,0
+56,"Spy",12,1,0
+57,"Stirge",14,0.125,0
+58,"Stone Giant",17,7,0
+59,"Stone Golem",17,10,0
+60,"Swarm of Insects",12,0.5,0
+61,"Swarm of Rats",10,0.25,0
+62,"Troglodyte",11,0.25,0
+63,"Troll",15,5,0
+64,"Twig Blight",13,0.125,0
+65,"Vampire",16,13,0
+66,"Vampire Spawn",15,5,0
+67,"Veteran",17,3,0
+68,"Violet Fungus",5,0.25,0
+69,"Will-o-Wisp",19,2,0
+70,"Winged Kobold",13,0.25,0
+71,"Wolf",13,0.25,0
+72,"Wyvern",13,6,0
+73,"Young Green Dragon",18,8,0
+74,"Yuan-Ti Malison (Type 1)",12,3,0
+75,"Yuan-Ti Malison (Type 2)",12,3,0
+76,"Yuan-Ti Malison (Type 3)",12,3,0
+77,"Yuan-Ti Pureblood",11,1,0
+78,"Zombie",8,0.25,0

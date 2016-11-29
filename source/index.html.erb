@@ -1,0 +1,28 @@
+---
+title: Home
+javascript:
+- application.js
+- actors.js
+---
+
+  <header class="navbar">
+    <h1>Minion</h1>
+    <a id="button-edit" class="button" href="#">Edit</a>
+  </header>
+  <main>
+    <ul id="encounter-list" class="encounter-listing">
+    </ul>
+  </main>
+  <div id="panel">
+    <div id="panel-body" class="panel-body">
+    </div>
+    <span class="panel-close-x toggle-panel">&times;</span>
+  </div>
+  <footer class="toolbar">
+    <button id="button-clear-data" class="button">Clear All</button>
+    <button id="button-add" class="button">+</button>
+  </footer>
+
+<%= partial "/handlebars/hb-encounter-list-actor" %>
+<%= partial "/handlebars/hb-new-actor-form" %>
+<%= partial "/handlebars/hb-new-actor-type" %>

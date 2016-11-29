@@ -1,0 +1,8 @@
+.button {
+
+  .navbar & {
+    color: darken($base-shade, 40%) !important;
+    height: $standard-height;
+    text-align: center;
+  }
+}

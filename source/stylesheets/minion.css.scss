@@ -1,0 +1,263 @@
+@import "compass/reset";
+@import "compass/css3";
+
+@import "partials/_vars";
+@import "partials/_mixins";
+@import "partials/_form-reset";
+@import "partials/_buttons";
+@import "partials/_modals";
+@import "partials/_form-elements";
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $base-color;
+  color: $base00;
+  font-family: $font-stack-sans;
+}
+
+a {
+  color: $orange;
+}
+
+p {
+  margin-bottom: $gutter-half;
+}
+
+.navbar {
+  background-color: $base-shade;
+  line-height: $standard-height;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+
+  .standalone & {
+    padding-top: 20px;
+
+    .button {
+      top: 20px;
+    }
+  }
+
+  h1 {
+    color: darken($base-shade, 60%);
+    line-height: $standard-height;
+  }
+}
+
+.toolbar {
+  bottom: 0;
+  position: fixed;
+  background-color: $base-shade;
+  height: $standard-height;
+  line-height: $standard-height;
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+}
+
+#button-add {
+  background-color: transparent;
+  color: darken($base-shade, 40%) !important;
+  font-size: .8 * $standard-height;
+  padding: 0;
+  position: absolute;
+  right: $standard-height/4;
+  top: 0;
+  width: $standard-height;
+}
+
+#button-edit,
+#button-clear-data {
+  background-color: transparent;
+  color: darken($base-shade, 40%) !important;
+  padding: 0;
+  position: absolute;
+  right: $standard-height/2;
+  text-transform: none;
+  top: 0;
+}
+
+#button-clear-data {
+  left: $standard-height/2;
+  right: auto;
+}
+
+
+.button-delete {
+  @include transition-duration(0.3s);
+  font-size: 1.2em;
+  opacity: 0.0;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  visibility: hidden;
+  width: $standard-height;
+
+  .editable & {
+    opacity: 1.0;
+    visibility: visible;
+  }
+}
+
+main {
+  margin-top: $standard-height;
+
+  .standalone & {
+    margin-top: $standard-height + 20px;
+  }
+}
+
+.actor-listing {
+  margin-bottom: 44px;
+}
+
+.actor {
+  @include transition-duration(0.3s);
+  background-color: $base-color;
+  border-bottom: 1px solid rgba($base00, .3);
+  height: $standard-height + 10px;
+  line-height: $standard-height + 10px;
+  position: relative;
+
+  &.monster {
+    color: $red;
+  }
+}
+
+.actor-initiative {
+  @include transition-duration(0.3s);
+  color: rgba($base-shade, .4);
+  font-size: $standard-height;
+  left: 0;
+  position: absolute;
+  top: 0;
+
+  .editable & {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.actor-name {
+  @include transition-duration(0.3s);
+  font-size: 1.2em;
+  margin-left: $standard-height/2;
+  position: relative;
+  @include text-shadow(white 1px 1px 0);
+
+  .editable & {
+    margin-left: $standard-height;
+  }
+}
+
+.actor-ac {
+  @include transition-property(all);
+  @include transition-duration(0.3s);
+  font-size: 1.2em;
+  position: absolute;
+  right: $standard-height/2;
+  top: 0;
+
+  .editable & {
+    right: $standard-height;
+  }
+}
+
+.actor-ac_label {
+  font-size: 0.8em;
+  opacity: 0.5;
+  vertical-align: baseline;
+}
+
+.actor-ac_value {
+  font-size: 1.5em;
+}
+
+.handle {
+  @include transition-property(all);
+  @include transition-duration(0.3s);
+  opacity: 0.0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  vertical-align: middle;
+  visibility: hidden;
+  width: $standard-height;
+
+  .editable & {
+    opacity: 0.3;
+    visibility: visible;
+  }
+}
+
+.selected {
+  background-color: lighten($base-color, 10%);
+
+  &.monster {
+    color: darken($red, 20%);
+  }
+
+  .actor-name {
+    padding-left: $gutter-quarter;
+  }
+}
+
+
+// -----
+
+#panel {
+  position: fixed;
+  @include transition-property(all);
+  @include transition-duration(0.4s);
+  @include translateY(100%);
+  background-color: $base-color;
+  bottom: 0;
+  left: 0;
+  // opacity: 0;
+  padding: $standard-height $standard-height/2;
+  right: 0;
+  top: 0;
+
+  .standalone & {
+    padding-top: $standard-height + 20px;
+  }
+
+  &.active {
+    @include translateY(0);
+    opacity: 1.0;
+    z-index: 100;
+  }
+
+  h2 {
+    margin-bottom: $gutter-half;
+  }
+}
+
+.panel-close-x {
+  @include absolute;
+  color: darken($base-shade, 40%);
+  cursor: pointer;
+  font-size: .8 * $standard-height;
+
+  line-height: $standard-height;
+  text-align: center;
+  width: $standard-height;
+  height: $standard-height;
+  top: 0;
+  right: $standard-height/4;
+
+  .standalone & {
+    margin-top: 20px;
+  }
+}

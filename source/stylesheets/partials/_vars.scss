@@ -1,0 +1,75 @@
+// `Colors.
+//----------------------------------------------------------------------------------------------------
+
+//  Solarized colors
+
+$base03: #002b36;
+$base02: #073642;
+$base01: #586e75;
+$base00: #657b83;
+$base0: #839496;
+$base1: #93a1a1;
+$base2: #eee8d5;
+$base3: #fdf6e3;
+$yellow: #b58900;
+$orange: #cb4b16;
+$red: #dc322f;
+$magenta: #d33682;
+$violet: #6c71c4;
+$blue: #268bd2;
+$cyan: #2aa198;
+$green: #859900;
+
+// `Variables.
+//----------------------------------------------------------------------------------------------------
+
+$font-stack-sans: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$font-color-body: $base00;
+
+$standard-height: 44px;
+$standardHeight: $standard-height;
+
+$gutter: $standard-height/2;
+$gutter-half: $gutter/2;
+$gutter-quarter: $gutter/4;
+
+$base-color: $base3;
+$base-shade: darken($base-color, 20%);
+$base-tint: lighten($base-color, 2%);
+
+// Breakpoints.
+$media-mobile-max: 767px;
+$media-tablet-min: 768px;
+$media-tablet-max: 1024px;
+$media-desktop-min: 1025px;
+
+$font-size-input: 16px;
+$font-stack-futura: "monospace";
+$input-button-height: 12px;
+$input-color-hover: #F00;
+$font-stack-body: $font-stack-sans;
+$lang-forward: left;
+$lang-reverse: right;
+$old-ie-support: false;
+
+
+// Colors.
+$color-link-blue: #639ec8;
+$color-light-gray: #e0dfdf;
+$color-medium-gray: #9c9b9b;
+$color-rich-gray: #8b8b8b;
+$color-dark-gray: #393939;
+$color-gold: #d1984e;
+$color-dark-gold: #9f702b;
+$color-heading: #666;
+$color-hr: $color-light-gray;
+$color-red: #a80004;
+
+// Form elements.
+$input-height: 44px;
+$input-height-small: 20px;
+$input-color-dark: darken($base-shade, 40%);
+$input-button-height: 44px;
+$input-color-light: $base-shade;
+$input-color-hover: $color-dark-gray;

@@ -1,0 +1,136 @@
+// `Positioning.
+//----------------------------------------------------------------------------------------------------
+
+@mixin absolute {
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+}
+
+// `Media Query Helper.
+//----------------------------------------------------------------------------------------------------
+
+@mixin mq($width) {
+  $width: unquote($width);
+
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+// `Disabled input state.
+//----------------------------------------------------------------------------------------------------
+
+@mixin disabled {
+  @include user-select(none);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+// `Base button style.
+//----------------------------------------------------------------------------------------------------
+
+@mixin button {
+  // "Less beefy is better for sure" - Rey Latham
+  -webkit-font-smoothing: antialiased;
+
+  background-color: $input-color-light;
+  color: $input-color-dark !important;
+  display: inline-block;
+  overflow: hidden;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  height: $input-button-height;
+
+  // Applies only to links with the class of "button".
+  // Overridden by _form-reset.scss via {line-height:normal !important}.
+  line-height: $input-button-height;
+
+  // No link default style.
+  text-decoration: none !important;
+
+  @include mq($media-desktop-min) {
+    &:hover {
+      background-color: $input-color-hover;
+      color: #fff !important;
+    }
+  }
+
+  // Override, when inside a pane.
+  .pane & {
+    background: #bbb;
+  }
+
+  // Undo the override, if in a pane <nav>.
+  .pane-nav & {
+    background-color: $input-color-light;
+  }
+
+  &.button-action {
+    background-color: $input-color-dark;
+    color: #FFF !important;
+
+    // Undo the override.
+    .pane &,
+    .pane-nav & {
+      background-color: $color-gold;
+    }
+
+    &.active {
+      background-color: $color-dark-gold;
+    }
+
+    @include mq($media-desktop-min) {
+      &:hover {
+        background-color: $color-dark-gold;
+      }
+    }
+  }
+
+  &.button-small {
+    font-family: $font-stack-body;
+    font-size: $font-size-input * 0.85;
+    letter-spacing: 1px;
+
+    height: $input-height-small;
+
+    // Applies only to links with the class of "button".
+    // Overridden by _form-reset.scss via {line-height:normal !important}.
+    line-height: $input-height-small;
+  }
+
+  &.button-input-height {
+    font-family: $font-stack-body;
+    font-size: $font-size-input * 0.85;
+    height: $input-height;
+    line-height: $input-height;
+  }
+
+  &.button-wide {
+    width: 100%;
+  }
+}
+
+// `Clearfix.
+//----------------------------------------------------------------------------------------------------
+
+%clearfix:before,
+%clearfix:after {
+  content: ".";
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+}
+
+%clearfix:after {
+  clear: both;
+}

@@ -1,0 +1,12 @@
+<script id="actor-template" type="text/x-handlebars-template">
+  <li id="{{ actor.key }}" class="actor {{ actor.type }}">
+    <span class="actor-initiative">{{ actor.initiative }}</span>
+    <span class="actor-name">{{ actor.name }}</span>
+    <div class="actor-ac">
+      <span class="actor-ac_label">AC</span>
+      <span class="actor-ac_value">{{ actor.armor_class }}</span>
+    </div>
+    <span class="button-delete">&times;</span>
+    <span class="handle">&#9776;</span>
+  </li>
+</script>

@@ -1,0 +1,299 @@
+// `Block elements
+//----------------------------------------------------------------------------------------------------
+
+fieldset {
+  margin-bottom: $gutter-half;
+}
+
+label {
+  color: $input-color-dark;
+  display: block;
+  margin-bottom: $gutter-quarter;
+}
+
+p.label {
+  margin-bottom: $gutter-quarter;
+}
+
+// `Buttons
+//----------------------------------------------------------------------------------------------------
+
+button,
+a.button,
+span.button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  // Base button style.
+  @include button;
+}
+
+// `Button Bar (radio buttons)
+//----------------------------------------------------------------------------------------------------
+
+.button-bar {
+  border: 1px solid $input-color-dark;
+  overflow: hidden;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  label {
+    display: block;
+    background-color: $base-color;
+    color: $input-color-dark;
+    float: left;
+    margin: 0;
+    padding: $gutter-half;
+    text-align: center;
+    width: 50%;
+  }
+
+  input[type="radio"]:checked + label {
+    background-color: $base-shade;
+  }
+}
+
+// `Input widget.
+//----------------------------------------------------------------------------------------------------
+
+.input-widget {
+  @include absolute;
+  background-image: image-url('d20.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: $standardHeight - $gutter-half $standardHeight - $gutter-half;
+  bottom: 0;
+  height: $standard-height;
+  width: $standard-height;
+  right: 0;
+  text-indent: 100%;
+}
+
+
+// `Style form element boxes
+//----------------------------------------------------------------------------------------------------
+
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+  background-color: $base-tint;
+  border: 1px solid $input-color-dark;
+  color: $orange;
+  display: block;
+  font-family: $font-stack-body;
+  font-size: $font-size-input;
+  text-align: #{$lang-forward};
+  padding-top: 0;
+  padding-left: $gutter-half;
+  padding-right: $gutter-half;
+  padding-bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  height: $input-height;
+
+  @include mq($media-tablet-min) {
+    &.input-width-auto {
+      width: auto;
+    }
+  }
+
+  &:focus {
+    border-color: $orange;
+  }
+
+}
+
+::-webkit-input-placeholder {
+   color: $base-shade;
+}
+
+textarea {
+  padding-top: $gutter-quarter;
+  padding-bottom: $gutter-quarter;
+}
+
+textarea,
+select[size],
+select[multiple],
+select[multiple][size] {
+  height: auto;
+}
+
+
+// `Style <select> arrow
+//----------------------------------------------------------------------------------------------------
+
+select,
+select[size="0"],
+select[size="1"] {
+  background-image: image-url("select-arrow.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 30px;
+
+  // "Retina" screen.
+  @media (-webkit-min-device-pixel-ratio: 1.5) {
+    background-image: image-url("select-arrow@2x.png");
+    background-size: auto 100%;
+  }
+
+  // For WebKit.
+  @media (-webkit-min-device-pixel-ratio: 0) {
+    padding-right: 30px;
+  }
+
+}
+
+// For Firefox.
+@-moz-document url-prefix() {
+  select,
+  select[size="0"],
+  select[size="1"] {
+    padding-top: 3px;
+    padding-left: 1px;
+    padding-right: 10px;
+  }
+}
+
+// No arrow for multi-select
+select[size],
+select[multiple] {
+  background-image: none;
+}
+
+// `Input with button.
+//----------------------------------------------------------------------------------------------------
+
+.input-and-button {
+  width: 100%;
+}
+
+.input-and-button th input {
+  border-color: $input-color-dark;
+  border-right: 0;
+
+  @if $old-ie-support {
+    // IE7.
+    *margin-top: -1px;
+  }
+}
+
+.input-and-button td {
+  white-space: nowrap;
+  width: 1%;
+}
+
+.input-and-button input[type="image"] {
+  display: block;
+  height: $input-height;
+}
+
+.input-and-button input[type="submit"].icon-search {
+  background-color: $input-color-dark;
+  background-size: auto 100%;
+  background-image: image-url("icon-search.png");
+  background-repeat: no-repeat;
+  background-position: $lang-reverse center;
+  color: #fff !important;
+  height: $input-height;
+  padding-#{$lang-reverse}: $input-height;
+
+  &:hover {
+    background-color: $input-color-hover;
+  }
+
+}
+
+// `Plus/Minus widget.
+//----------------------------------------------------------------------------------------------------
+
+.amount-widget {
+  cursor: default;
+  display: block;
+  position: relative;
+  padding-left: $input-height;
+  padding-right: $input-height;
+  width: 40px;
+
+  label + br + & {
+    margin-top: 5px;
+  }
+
+  input {
+    border-left: 0 !important;
+    border-right: 0 !important;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.amount-widget-plus,
+.amount-widget-minus {
+  background-color: $input-color-dark;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  vertical-align: top !important;
+  position: absolute;
+  top: 0;
+
+  height: $input-height;
+  width: $input-height;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  span {
+    display: none;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 1.5) {
+    background-size: 100% 100%;
+  }
+}
+
+.amount-widget-plus {
+  right: 0;
+
+  background-image: image-url("amount-widget-plus.png");
+
+  @media (-webkit-min-device-pixel-ratio: 1.5) {
+    background-image: image-url("amount-widget-plus@2x.png");
+  }
+}
+
+.amount-widget-minus {
+  left: 0;
+
+  background-image: image-url("amount-widget-minus.png");
+
+  @media (-webkit-min-device-pixel-ratio: 1.5) {
+    background-image: image-url("amount-widget-minus@2x.png");
+  }
+}
+
+.amount-widget-plus,
+.amount-widget-minus {
+  input[disabled] ~ & {
+    // Opacity.
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $input-color-dark;
+      cursor: default;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "version": 0.1,
+  "timestamp": 1407872382637,
+  "player_characters":
+  [
+    {
+      "id":1,
+      "name": "Nick the Rogg",
+      "armor_class": 14,
+      "initiative-modifier": 3,
+      "unique": "1"
+    },
+    {
+      "id":2,
+      "name": "Cleary",
+      "armor_class": 18,
+      "initiative-modifier": -1,
+      "unique": "1"
+    },
+    {
+      "id":3,
+      "name": "Ron",
+      "armor_class": 17,
+      "initiative-modifier": -1,
+      "unique": "1"
+    },
+    {
+      "id":4,
+      "name": "Ulfgar",
+      "armor_class": 19,
+      "initiative-modifier": 0,
+      "unique": "1"
+    }
+  ]
+}

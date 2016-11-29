@@ -1,0 +1,21 @@
+---
+title: Monsters
+javascript:
+- application.js
+- monsters.js
+---
+
+  <header class="navbar">
+    <h1>Choose Monster(s)</h1>
+    <a id="button-edit" class="button" href="/">Cancel</a>
+  </header>
+  <main>
+    <ul id="monster-list" class="actor-listing">
+    </ul>
+  </main>
+  <footer class="toolbar">
+    <button id="add-selected" class="button">Add</button>
+  </footer>
+
+<%= partial "/handlebars/hb-encounter-list-actor" %>
+<%= partial "/handlebars/hb-new-actor-form" %>

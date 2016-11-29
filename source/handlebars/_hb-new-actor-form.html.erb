@@ -1,0 +1,30 @@
+<script id="actor-new" type="text/x-handlebars-template">
+  <form id="{{ form_id }}" action="#">
+    <fieldset class="button-bar">
+      <input type="radio" id="actor_type_pc" name="actor[type]" value="pc" {{#if isPC}}checked{{/if}}> <label for="actor_type_pc">PC</label>
+      <input type="radio" id="actor_type_monster" name="actor[type]" value="monster" {{#if isMonster}}checked{{/if}}> <label for="actor_type_monster">Monster</label>
+    </fieldset>
+    <p>
+      <label for="actor_name">Name</label>
+      <input type="text" id="actor_name" name="actor[name]" placeholder="Drizzt Do'Urden" value="{{ name }}" required {{#if name}}readonly{{/if}}>
+    </p>
+    <p>
+      <label for="actor_armor_class">AC</label>
+      <input type="number" id="actor_armor_class" name="actor[armor_class]" value="{{ armor_class }}" required>
+    </p>
+    <p>
+      <label for="actor_initiative_mod">
+        Initiative Modifier
+      </label>
+      <input type="number" id="actor-initiative-mod" name="actor[initiative_mod]" placeholder="Dex Mod + Proficiency" value="{{ initiative_mod }}">
+    </p>
+    <p class="make-relative" style="position: relative;">
+      <label for="actor_initiative">Initiative</label>
+      <input type="number" id="actor_initiative" name="actor[initiative]" placeholder="d20 + Dex Mod" value="{{ initiative }}">
+      <a id="roll-initiative" class="input-widget" href="#">Roll</a>
+    </p>
+    <p>
+      <button class="button button-action button-wide">{{ button_text }}</button>
+    </p>
+  </form>
+</script>
